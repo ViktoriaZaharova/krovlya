@@ -1,0 +1,1229 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+//Сброс стилей
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	line-height: 1
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote
+	&:before, &:after
+		content: ''
+		content: none
+
+q
+	&:before, &:after
+		content: ''
+		content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+//Общие стили
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 24px
+	font-family: $default-font
+	color: $text
+
+html, body
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+a
+	outline: none
+	text-decoration: none
+	color: $text
+	transition: .25s ease
+	&:hover
+		text-decoration: none
+		color: $accent
+
+
+input, textarea, button, select
+	outline: none
+	border: none
+
+.container
+	display: flex
+	position: relative
+	width: 1170px
+	padding: 0 15px
+	box-sizing: border-box
+	margin: 0 auto
+
+
+.btn
+	cursor: pointer
+	width: 212px
+	height: 51px
+	background: $accent
+	border-radius: 25.5px
+	font:
+		size: 14px
+		weight: 800
+	text-transform: uppercase
+	color: #fff
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: .25s ease
+	&:hover
+		color: #000
+		background: lighten($accent,10%)
+
+.logo
+	font:
+		size: 20px
+		weight: 700
+	color: $accent
+	text-transform: uppercase
+
+//поиск
+.search
+	width: 195px
+	height: 34px
+	border-radius: 3px
+	position: relative
+	margin: 0 48px 0 156px
+	input
+		width: 100%
+		height: 100%
+		background: #f5f5f5
+		border-radius: 3px
+		padding-left: 12px
+		box-sizing: border-box
+		color: #afafaf
+	*::-webkit-input-placeholder
+		color: #afafaf
+	button
+		background: #b39671
+		border-radius: 3px
+		height: 100%
+		width: 33px
+		position: absolute
+		top: 0
+		right: 0
+		transition: .25s ease
+		cursor: pointer
+		&:hover
+			background: darken($accent,5%)
+		img
+			width: 14px
+			margin: 0 auto
+
+//выпадающий список языков
+.drop_language
+	position: relative
+	display: flex
+	flex-direction: row
+	align-items: center
+	cursor: pointer
+	padding-right: 7px
+	&:before
+		content: ''
+		position: absolute
+		background: url("../img/arrow.png") no-repeat
+		width: 7px
+		height: 5px
+		right: 0
+		transition: .25s ease
+	&:hover
+		&:before
+			transform: rotate(180deg)
+		.lang_hidden
+			opacity: 1
+			visibility: visible
+	img
+		width: 20px
+		height: 20px
+		margin: 0 5px 0 10px
+	.lang_hidden
+		position: absolute
+		display: flex
+		flex-direction: column
+		top: 27px
+		left: 0
+		z-index: 2
+		transition: .25s ease
+		opacity: 0
+		visibility: hidden
+		.it
+			display: flex
+			flex-direction: row
+			align-items: center
+			transition: .25s ease
+			background: $bg
+			padding: 5px
+			box-sizing: border-box
+			&:hover
+				background: $accent
+
+//корзина
+.card
+  position: relative
+  .total
+    position: absolute
+    width: 14px
+    height: 14px
+    background: #e53642
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    font:
+      size: 10px
+      weight: 700
+    top: -8px
+    right: -8px
+  img
+    width: 25px
+
+
+//заголовок
+.title
+  font:
+    size: 30px
+  text-transform: uppercase
+  text-align: center
+  line-height: 30px
+  span
+    font-weight: 800
+
+//Шапка сайта
+header
+	display: flex
+	flex-direction: column
+	.top_line
+		background: $bg
+		box-shadow: 0 -3px 10px 0 #dcdcdc inset
+		.container
+			flex-direction: row
+			justify-content: flex-end
+			align-items: center
+			flex-wrap: wrap
+			height: 75px
+			p
+				span
+					font-weight: 700
+			ul
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				align-items: center
+				flex-wrap: wrap
+				width: 375px
+				margin: 0 25px
+				li
+					display: flex
+					flex: auto
+					&:nth-child(2)
+						a
+							border: none
+					a
+						padding: 1px 21px
+						box-sizing: border-box
+						border:
+							right: 1px solid #bcbcbc
+							left: 1px solid #bcbcbc
+	.bottom_line
+		background: #ffffff
+		position: relative
+		.container
+			height: 80px
+			flex-direction: row
+			align-items: center
+			flex-wrap: wrap
+			position: relative
+			.logo
+				width: 54px
+				margin-right: 48px
+
+//Меню
+#mobile_mnu
+	display: none
+	position: relative
+
+.bottom_line.fixed
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 20
+
+.menu
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+	width: 604px
+	height: 100%
+	ul
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		li
+			height: 100%
+			display: flex
+			flex: auto
+			justify-content: center
+			align-items: center
+			transition: .25s ease
+			&:hover, &:focus
+				a
+					background: $accent
+					color: #fff
+					&:before
+						opacity: 1
+						visibility: visible
+				.drop_menu
+					opacity: 1
+					visibility: visible
+					display: flex
+					.wrap
+						ul
+							li
+								a
+									background: none
+									color: $text
+									&:hover
+										color: $accent2
+			a
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 100%
+				height: 100%
+				text-transform: uppercase
+				font:
+					size: 14px
+					weight: 700
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					bottom: -40px
+					right: 0
+					left: 0
+					margin: 0 auto
+					border: 20px solid transparent
+						top: 20px solid $accent
+					width: 0
+					z-index: 21
+					opacity: 0
+					visibility: hidden
+
+.drop_menu
+	z-index: 20
+	position: absolute
+	background: $bg
+	width: 100%
+	top: 80px
+	left: 0
+	transition: .25s ease
+	padding: 38px 25px 60px 25px
+	box-sizing: border-box
+	display: none
+	flex-direction: row
+	opacity: 0
+	visibility: hidden
+	.wrap
+		display: flex
+		flex-direction: column
+		margin-right: 55px
+		&:last-child
+			margin-right: 0
+		h6
+			font:
+				weight: 800
+			margin-bottom: 15px
+			padding-bottom: 15px
+			border-bottom: 3px solid $accent2
+			text-transform: uppercase
+		ul
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			li
+				height: auto
+				a
+					height: auto
+					text-transform: none
+					font-weight: normal
+					line-height: 30px
+					&:before
+						display: none
+					&:hover
+						background: transparent
+						text-decoration: underline
+						color: $accent2
+
+// Контент
+.content
+  .home
+    height: 545px
+    width: 100%
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: rgba(#000,.29)
+      z-index: 2
+    .home_carousel
+      max-height: 545px
+      width: 100%
+      overflow: hidden
+      display: flex
+      align-items: center
+      .swiper-wrapper
+        height: 545px
+        display: flex
+        align-items: center
+        .swiper-slide
+          display: flex
+          align-items: center
+      .swiper-pagination
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: absolute
+        width: 30px
+        margin: 0 auto
+        left: 0
+        right: 0
+        bottom: 19px
+        z-index: 4
+        .swiper-pagination-bullet
+          width: 5px
+          height: 5px
+          background: #FFFFFF
+          border-radius: 50%
+          opacity: 1
+          margin: 0
+        .swiper-pagination-bullet-active
+          width: 9px
+          height: 9px
+          background: $accent
+    .home_title
+      position: absolute
+      right: 0
+      left: 0
+      margin: 0 auto
+      top: 31%
+      z-index: 3
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      max-width: 755px
+      h3
+        color: #FFFFFF
+        text-transform: uppercase
+        font:
+          size: 54px
+          weight: 900
+        line-height: 54px
+        text-align: center
+        padding-bottom: 32px
+        margin-bottom: 41px
+        border-bottom: 1px solid #ffffff
+
+.new
+	margin: 99px 0
+	.container
+		flex-direction: column
+		h2
+			margin-bottom: 49px
+		.new_content
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			flex-wrap: wrap
+			.item
+				width: 380px
+				display: flex
+				flex-direction: column
+				align-items: center
+				.block_img
+					width: 100%
+					height: 301px
+					overflow: hidden
+					display: flex
+					align-items: center
+					justify-content: center
+					img
+						height: 100%
+						max-width: none
+				h4
+					text-transform: uppercase
+					font:
+						size: 20px
+					margin: 18px 0 16px
+				.btn
+					width: 118px
+					height: 32px
+					font:
+						size: 12px
+
+.sale
+	background: url("../img/banner3.jpg") no-repeat bottom center
+		size: cover
+	height: 400px
+	width: 100%
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: rgba(#000,.41)
+		z-index: 2
+	.container
+		z-index: 3
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		height: 100%
+		h2
+			text-align: center
+			font:
+				size: 80px
+				weight: 800
+			color: #FFFFFF
+			line-height: 86px
+			margin-bottom: 60px
+			text-transform: uppercase
+		.sale_content
+			width: 810px
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			flex-wrap: wrap
+
+.popular, .associated
+	margin: 90px 0 83px
+	.container
+		flex-direction: column
+		h2
+			margin-bottom: 72px
+		.carousel
+			position: relative
+			.popular_carousel
+				width: calc(100% - 160px)
+				margin: 0 auto
+				display: flex
+				justify-content: space-between
+				overflow: hidden
+				.swiper-wrapper
+					.swiper-slide
+						max-width: 182px
+			.swiper-button-next
+				position: absolute
+				right: 0
+				top: 50px
+				outline: none
+				height: 31px
+			.swiper-button-prev
+				right: 34px
+				top: 50px
+				position: absolute
+				left: calc(100% - 60px)
+				outline: none
+				height: 31px
+		.description
+			margin: 123px 0 0 0
+			h6
+				font-weight: 800
+				margin-bottom: 36px
+
+.swiper-button-prev
+  background: url("../img/arrows-left.png") no-repeat
+
+.swiper-button-next
+  background: url("../img/arrows-right.png") no-repeat
+
+.cart_product
+	width: 182px
+	margin: 0 auto
+	display: flex
+	align-items: center
+	flex-direction: column
+	.block_img
+		border-bottom: 1px solid #ececec
+		padding-bottom: 13px
+		margin-bottom: 9px
+	.price
+		color: $accent2
+		font:
+			weight: 800
+		margin-top: 16px
+
+//Футер
+footer
+	display: flex
+	flex-direction: column
+	.footer_top
+		margin-bottom: 85px
+		.container
+			flex-direction: row
+			justify-content: space-between
+			flex-wrap: wrap
+			padding: 80px 15px 0 15px
+			box-sizing: border-box
+			border-top: 1px solid #ececec
+			.block_left
+				display: flex
+				flex-direction: column
+				max-width: 170px
+				margin-right: 50px
+				.logo
+					font-size: 60px
+					line-height: 60px
+					margin-bottom: 44px
+				.social
+					display: flex
+					flex-direction: column
+					max-width: 108px
+					span
+						color: #bbbbbb
+						margin-bottom: 25px
+					.soc_icon
+						display: flex
+						flex-direction: row
+						justify-content: space-between
+						flex-wrap: wrap
+						a
+							margin: 0 10px 24px 0
+							width: 20px
+							&:nth-child(3), &:last-child
+								margin-right: 0
+			.footer_it
+				max-width: 200px
+				display: flex
+				flex-direction: column
+				h4
+					font:
+						weight: 800
+					text-transform: uppercase
+					margin-bottom: 40px
+				ul
+					display: flex
+					flex-direction: column
+					li
+						a
+							line-height: 36px
+						.mail
+							color: $accent
+							font-weight: 800
+	.footer_bottom
+		background: $bg
+		.container
+			padding: 85px 15px
+			box-sizing: border-box
+			flex-direction: column
+			p
+				font:
+					size: 12px
+				line-height: 17px
+				margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+
+
+//страница каталог
+.catalog_home
+	background: url("../img/banner2.jpg") no-repeat center
+		size: cover
+	height: 335px
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: rgba(#000,.41)
+		z-index: 2
+	.container
+		z-index: 3
+		flex-direction: column
+		align-items: flex-start
+		justify-content: center
+		height: 100%
+		h3
+			font:
+				size: 89px
+				weight: 800
+			line-height: 89px
+			color: #fff
+			margin-bottom: 30px
+		p
+			margin-bottom: 30px
+			color: #fff
+		.btn
+			background: #FFFFFF
+			color: $accent
+			&:hover
+				background: $accent
+				color: #fff
+
+.breadcrumps
+	margin: 20px 0 50px
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	ul
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		li
+			a
+				font:
+					size: 12px
+				position: relative
+				padding: 0 10px
+				line-height: 14px
+				color: $accent2
+				&:hover
+					color: #000
+				&:before
+					content: '/'
+					position: absolute
+					right: 0
+					bottom: 0
+			&:nth-child(1)
+				a
+					padding-left: 0
+			&:last-child
+				a
+					color: #313131
+					&:hover
+						color: $accent2
+					&:before
+						display: none
+
+.wrapper
+	.container
+		flex-direction: row
+		justify-content: space-between
+		.sidebar
+			width: 263px
+			display: flex
+			flex-direction: column
+			.block_title
+				border-bottom: 3px solid $accent
+				height: 115px
+				display: flex
+				align-items: center
+				margin-bottom: 40px
+				h2
+					font:
+						weight: 800
+						size: 30px
+					line-height: 30px
+					text-transform: uppercase
+			h4
+				font:
+					size: 20px
+					weight: 800
+				text-transform: uppercase
+				margin-bottom: 34px
+			.filter
+				display: flex
+				flex-direction: column
+				margin: 0 0 36px 0
+				.in
+					&:before
+						transform: rotate(90deg)
+				&_title
+					background: #f8f2eb
+					width: 100%
+					display: flex
+					align-items: center
+					padding: 16px 16px 15px 17px
+					line-height: 16px
+					font-weight: 700
+					position: relative
+					transition: .25s ease
+					cursor: pointer
+					box-sizing: border-box
+					&:before
+						content: ''
+						position: absolute
+						right: 16px
+						background: url("../img/arrows-left.png") no-repeat
+							size: contain
+						width: 7px
+						height: 9px
+						line-height: 20px
+						top: 45%
+						transform: rotate(-90deg)
+						transition: .25s ease
+				.filter_content
+					display: none
+					margin: 23px 20px 0 17px
+					.range_val
+						display: flex
+						flex-direction: row
+						justify-content: space-between
+						align-items: center
+						margin-bottom: 16px
+						input
+							width: 87px
+							height: 43px
+							background: #f5f5f5
+							border-radius: 5px
+							text-align: center
+							font:
+								family: $default-font
+								size: 16px
+							color: $text
+
+  .wrapper_content
+    width: calc(100% - 300px)
+    display: flex
+    flex-direction: column
+    &-top
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      border-bottom: 3px solid #b39671
+      height: 115px
+      margin-bottom: 91px
+      .block_total
+        p
+          font-size: 14px
+          text-transform: uppercase
+          display: inline-block
+        span
+          font:
+            size: 30px
+            weight: 800
+          margin-left: 15px
+          line-height: 30px
+      .block_sort
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: center
+    .cart_content
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-between
+      .cart_product
+        margin: 0 0 75px 0
+        &:last-child, &:nth-child(11,), &:nth-child(10), &:nth-child(9)
+          margin: 0 0 58px 0
+    .popular
+      .popular_content
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+        margin-top: 46px
+        .cart_product
+          margin: 0
+
+.color-content
+  align-items: center
+  label
+    display: inline-block
+    margin: 0 10px 0 0
+    height: 30px
+    input[type="checkbox"]
+      ~ span
+        &:before
+          content: ''
+          border-radius: 50%
+          width: 30px
+          height: 30px
+          border: 2px solid transparent
+          box-sizing: border-box
+      ~ .grey
+        &:before
+          background: #f0eff0
+      ~ .brown
+        &:before
+          background: #c9bbb2
+      ~ .blue
+        &:before
+          background: #9ab0bf
+      ~ .beige
+        &:before
+          background: #ebe3cc
+      ~ .boggy
+        &:before
+          background: #b6ccc4
+      &:checked ~ span:before
+        border: 2px solid #60dd4d
+
+//сортирока товаров
+.sort, .links_sort
+  display: flex
+  flex-direction: row
+  align-items: center
+  p
+    font-size: 12px
+    margin-right: 12px
+  .select
+    position: relative
+    display: inline-block
+    cursor: pointer
+    background: #f5f5f5
+    border-radius: 5px
+    &:after
+      content: ''
+      position: absolute
+      background: url("../img/arrows-left.png") no-repeat
+        size: contain
+      width: 10px
+      height: 7px
+      right: 10px
+      top: 40%
+      transform: rotate(-90deg)
+    select
+      -moz-appearance: none
+      appearance: none
+      -webkit-appearance: none
+      padding: 0 30px 0 10px
+      min-width: 60px
+      height: 43px
+      font:
+        weight: 800
+        size: 16px
+        family: $default-font
+      text-align: center
+  ul
+    display: flex
+    flex-direction: row
+    align-items: center
+    li
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+      a
+        color: $accent2
+        font-weight: 800
+        display: flex
+        align-items: center
+        &:hover
+          color: $text
+        img
+          width: 13px
+      .active
+        color: $text
+        font-weight: normal
+        &:hover
+          color: $accent
+
+.links_sort
+  justify-content: flex-end
+
+//изменение стандартного чекбокса
+label
+	margin-bottom: 15px
+	cursor: pointer
+	display: block
+	&:last-child
+		margin-bottom: 0
+	span
+		padding-left: 30px
+		font-size: 14px
+		line-height: 21px
+		display: block !important
+	input[type="checkbox"]
+		display: none
+		~ span
+			position: relative
+			display: inline-block
+			&:before
+				content: "\f111"
+				text-align: center
+				font-size: 13px
+				color: #fff
+				position: absolute
+				display: block
+				width: 21px
+				height: 21px
+				background: #fff
+				border: 1px solid $accent
+				left: 0
+				top: 0
+				border-radius: 5px
+				box-sizing: border-box
+				transition: all 300ms ease-in-out
+				font-family: 'fontawesome', sans-serif
+		&:checked ~ span:before
+			background: #fff
+			color: $accent
+
+.ui-widget.ui-widget-content
+	height: 3px
+	background: #d3c6b4
+	border: none !important
+		radius: 0
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
+	width: 18px !important
+	height: 18px !important
+	background: $accent !important
+	border: none !important
+		radius: 50% !important
+	outline: none
+	cursor: pointer
+	top: -6px !important
+
+
+//карточка товара
+.wrapper_cart
+  .container
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+    .block_left
+      display: flex
+      flex-direction: column
+      width: 458px
+      .cart_slider
+        position: relative
+        margin-bottom: 60px
+        overflow: hidden
+        .swiper-wrapper
+          text-align: center
+          .swiper-slide
+            display: block
+            img
+              margin: 0 auto
+              max-width: 331px
+      .img_min
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 0 20px
+        box-sizing: border-box
+        .fancybox-img
+          width: 86px
+    .block_info-product
+      width: 370px
+      display: flex
+      flex-direction: column
+      h4
+        font:
+          weight: 800
+          size: 30px
+        line-height: 30px
+        text-transform: uppercase
+      .avialability
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin: 22px 0 35px
+        img
+          width: 20px
+          margin-right: 9px
+        p
+          font-size: 12px
+      .price
+        display: flex
+        flex-direction: row
+        align-items: flex-end
+        color: $accent
+        font-weight: 800
+        margin-bottom: 31px
+        p
+          font-size: 40px
+          line-height: 40px
+        span
+          font-size: 20px
+          margin-left: 10px
+		.sort
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			margin: 30px 0
+			p
+				font-size: 12px
+				line-height: 14px
+				margin: 0 0 11px 0
+			.select
+				width: 293px
+				height: 43px
+				select
+					width: 100%
+		.slider_right
+			width: 195px
+			display: flex
+			flex-direction: column
+			h6
+				font:
+					weight: 800
+				text-transform: uppercase
+				margin-bottom: 36px
+				line-height: 20px
+			.slider_recomended
+				width: 100%
+				max-height: 470px
+				overflow: hidden
+				position: relative
+				.swiper-wrapper
+					max-height: 470px
+					margin: 0 auto
+					.cart_product
+						.price
+							line-height: 18px
+				.swiper-button-prev
+					display: none
+				.swiper-button-next
+					bottom: 0
+					top: auto
+					transform: rotate(90deg)
+					right: 0
+					left: 0
+					margin: 0 auto
+					height: 31px
+					outline: none
+
+.wr-tabs
+	margin: 80px 0 115px
+	.container
+		display: flex
+		flex-direction: column
+		.tabs
+			display: flex
+			flex-direction: row
+			justify-content: center
+			align-items: center
+			position: relative
+			flex-wrap: wrap
+			&:before, &:after
+				content: ''
+				position: absolute
+				height: 3px
+				width: calc(50% - 237px)
+				background: $accent
+			&:before
+				left: 0
+			&:after
+				right: 0
+			.tab
+				background: #ffffff
+				border: 3px solid $accent2
+				color: $accent2
+				margin-right: 30px
+				box-sizing: border-box
+				&:last-child
+					margin-right: 0
+				&:hover
+					background: $accent2
+					color: $text
+				&.active
+					background: $accent2
+					border-color: transparent
+					color: #fff
+					&:hover
+						background: #fff
+						color: $text
+						border-color: $accent2
+		.content
+			margin-top: 60px
+			.tab-cont
+				display: none
+				.subtitle
+					font:
+						weight: 800
+					margin-bottom: 30px
+				ul
+					margin-top: 40px
+					li
+						line-height: 35px
+						span
+							font-weight: 800
+				&.active
+					display: block
+
+.associated
+	margin: 0 0 111px 0
+	.container
+		.carousel
+			.swiper-button-next
+				position: absolute
+				right: 0
+				top: 50px
+				outline: none
+				height: 31px
+			.swiper-button-prev
+				left: 0
+				top: 50px
+				position: absolute
+				outline: none
+				height: 31px
+
+@import "media" // Всегда в конце

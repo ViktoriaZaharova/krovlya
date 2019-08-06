@@ -1,0 +1,441 @@
+@import "bourbon"
+@import "vars"
+
+
+@media only screen and (max-width : 1200px)
+  header
+    .bottom_line
+      .container
+        justify-content: space-between
+
+  .container
+    width: 100%
+
+  .search
+    margin: 0
+
+  .new, .associated, .popular
+    margin: 50px 0
+    .container
+      .title
+        margin-bottom: 30px
+      .new_content
+        justify-content: space-around
+        .item
+          width: 300px
+
+@media screen and (max-width: 1050px)
+  .wrapper_cart
+    .slider_right
+      width: 100%
+      margin-top: 30px
+      .slider_recomended
+        padding-bottom: 40px
+        max-height: none
+        .swiper-wrapper
+          max-height: none
+          flex-direction: row
+          .swiper-slide
+            height: auto !important
+            display: flex
+            flex-direction: column
+
+@media screen and (max-width: 1025px)
+  footer
+    .footer_top
+      .container
+        .block_left
+          margin-right: 0
+
+@media screen and (max-width: 998px)
+  .popular
+    .container
+      .carousel
+        .popular_carousel
+          .swiper-wrapper
+            .swiper-slide
+              max-width: none
+
+  footer
+    .footer_top
+      .container
+        flex-wrap: wrap
+        .footer_it
+          ul
+            li
+              a
+                line-height: 26px
+                font-size: 14px
+
+@media only screen and (max-width : 992px)
+  #mobile_mnu
+    display: flex !important
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-transform: uppercase
+    text-decoration: underline
+    font-weight: bolder
+    font-size: 20px
+    color: $text
+    cursor: pointer
+
+  .menu
+    display: none
+    position: absolute
+    width: 100%
+    top: 80px
+    background: $bg
+    z-index: 5
+    left: 0
+    flex-direction: column
+    height: auto
+    ul
+      display: flex
+      flex-direction: column !important
+      align-items: center
+      padding: 15px 0
+      li
+        display: flex
+        flex-direction: column
+        margin-bottom: 10px
+
+
+  .drop_menu
+    position: relative
+    top: 0
+
+  header
+    .bottom_line
+      .container
+        .logo
+          margin-right: 0
+          width: auto
+
+  .wr-tabs
+    margin: 50px 0
+
+  .associated
+    .container
+      .carousel
+        .popular_carousel
+          width: calc(100% - 130px)
+          .swiper-wrapper
+            .swiper-slide
+              max-width: none
+
+@media screen and (max-width: 940px)
+  .new
+    .container
+      .new_content
+        .item
+          margin-bottom: 30px
+
+  .wrapper
+    .container
+      .sidebar
+        display: none
+      .wrapper_content
+        width: 100%
+
+@media only screen and (max-width : 900px)
+  header
+    .top_line
+      .container
+        p
+          font-size: 14px
+        ul
+          width: auto
+          li
+            a
+              font-size: 14px
+              padding: 1px 15px
+        .drop_language
+          font-size: 14px
+
+@media screen and (max-width: 860px)
+  .wrapper_cart
+    .container
+      flex-direction: column
+      .block_left
+        width: 100%
+        margin-bottom: 40px
+      .block_info-product
+        width: 100%
+
+@media screen and (max-width: 830px)
+  .content
+    .home
+      max-height: 500px
+      height: auto
+      .home_carousel
+        height: auto
+        max-height: 500px
+      .home_title
+        max-width: 600px
+        top: 0
+        height: 100%
+        h3
+          font-size: 40px
+          line-height: 50px
+          padding-bottom: 20px
+
+  .sale
+    .container
+      h2
+        font-size: 50px
+        line-height: 60px
+        margin-bottom: 50px
+      .sale_content
+        width: 100%
+        justify-content: space-around
+        .btn
+          width: 180px
+          font-size: 12px
+          height: 40px
+
+  footer
+    .footer_top
+      .container
+        justify-content: space-around
+        .footer_it
+          margin-bottom: 20px
+          h4
+            margin-bottom: 20px
+
+  .wrapper
+    .container
+      .wrapper_content
+        .popular
+          .popular_content
+            justify-content: space-around
+            .cart_product
+              margin-bottom: 20px
+
+@media only screen and (max-width : 768px)
+  header
+    .top_line
+      .container
+        height: auto
+        padding: 10px 15px
+        p
+          margin: 0 30px 0 0
+        ul
+          width: 100%
+          margin: 0 0 10px 0
+          justify-content: flex-end
+          order: -3
+          li
+            flex: none
+
+  .content
+    .home
+      max-height: 400px
+      .home_carousel
+        max-height: 400px
+
+
+@media only screen and (max-width : 630px)
+  .content
+    .home
+      max-height: 300px
+      .home_carousel
+        max-height: 300px
+      .home_title
+        max-width: 400px
+        h3
+          font-size: 26px
+          line-height: 30px
+
+  .btn
+    width: 180px
+    height: 40px
+    font-size: 12px
+
+  .new
+    .container
+      .new_content
+        flex-direction: column
+        align-items: center
+        .item
+          .block_img
+            height: 270px
+
+  .sale
+    height: 350px
+    .container
+      h2
+        font-size: 40px
+        line-height: 50px
+        margin-bottom: 20px
+      .sale_content
+        .btn
+          width: 150px
+
+  .catalog_home
+    .container
+      h3
+        font-size: 60px
+        line-height: 60px
+
+  .links_sort, .sort
+    margin-bottom: 15px
+
+  .wrapper
+    .container
+      .wrapper_content-top
+        height: auto
+        margin-bottom: 50px
+
+@media screen and (max-width: 500px)
+  .sale
+    .container
+      .sale_content
+        flex-direction: column
+        align-items: center
+        .btn
+          margin-bottom: 15px
+          &:last-child
+            margin-bottom: 0
+
+  .popular
+    .container
+      .carousel
+        .popular_carousel
+          padding-bottom: 40px
+          width: 100%
+        .swiper-button-next, .swiper-button-prev
+          bottom: 0
+          top: 100%
+
+  .drop_menu
+    flex-direction: column
+    padding-bottom: 0
+
+@media only screen and (max-width : 450px)
+  header
+    .top_line
+      .container
+        p, .drop_language
+          font-size: 12px
+        ul
+          li
+            a
+              font-size: 12px
+        p
+          margin-right: 15px
+    .bottom_line
+      .container
+        height: auto
+        padding: 10px 15px
+
+  .search
+    width: 100%
+    margin: 10px 0 0 0
+
+  .card
+    order: -1
+
+  .logo
+    order: -3
+
+  #mobile_mnu
+    order: -2
+
+  .content
+    .home
+      max-height: 250px
+      .home_carousel
+        max-height: 250px
+      .home_title
+        max-width: 100%
+        h3
+          padding-bottom: 10px
+          margin-bottom: 20px
+
+  footer
+    .footer_top
+      margin-bottom: 40px
+      .container
+        padding: 40px 15px 0 15px
+        flex-direction: column
+        .block_left
+          .logo
+            margin-bottom: 20px
+    .footer_bottom
+      .container
+        padding: 40px 15px
+
+  .wrapper_cart
+    .container
+      .block_left
+        .img_min
+          .fancybox-img
+            width: 50px
+        .cart_slider
+          .swiper-wrapper
+            .swiper-slide
+              img
+                max-width: 250px
+      .block_info-product
+        h4
+          font-size: 26px
+        .price
+          p
+            font-size: 30px
+
+  .wr-tabs
+    .container
+      .tabs
+        flex-direction: column
+        align-items: center
+        .tab
+          margin: 0 0 20px 0
+
+@media screen and  (max-width: 400px)
+  .wrapper
+    .container
+      .wrapper_content
+        .wrapper_content-top
+          .block_sort
+            flex-direction: column
+            align-items: flex-start
+        .cart_content
+          flex-direction: column
+          align-items: center
+        .popular
+          .popular_content
+            flex-direction: column
+            align-items: center
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 380px)
+  .content
+    .home
+      max-height: 215px
+      .home_carousel
+        max-height: 215px
+      .home_title
+        h3
+          font-size: 20px
+          line-height: 24px
+
+  .title
+    font-size: 26px
+    line-height: 30px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
